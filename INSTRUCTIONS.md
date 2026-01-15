@@ -11,15 +11,6 @@
 
 The code must be run from within the **attacker container** in the provided VM environment.
 
-## Configuration
-
-Before compiling, you **MUST** edit `ex4_sqli.c` and update the `SUBMITTER_ID`:
-
-```c
-#define SUBMITTER_ID "123456789"  /* CHANGE THIS TO YOUR ID */
-```
-
-Replace `123456789` with your actual student ID.
 
 ## Compilation
 
@@ -74,18 +65,6 @@ On success, the attack creates a file named `{YOUR_ID}.txt` containing the passw
 *extracted_password*
 ```
 
-## Debug Mode
-
-The code includes debug output (prints to stderr). To disable debug mode for final submission:
-
-In `ex4_sqli.c`, change:
-```c
-#define DEBUG 1
-```
-to:
-```c
-#define DEBUG 0
-```
 
 ## Troubleshooting
 
@@ -101,20 +80,6 @@ to:
 - Make sure you're compiling inside the attacker container (Linux environment)
 - The code uses POSIX sockets which aren't available on Windows
 
-## Verification
-
-To manually verify the password, connect to the database:
-
-```bash
-docker exec -it mariadb-server /bin/bash
-mariadb -u u67607 -p 67607db
-# Password: courseUser
-```
-
-Then run:
-```sql
-SELECT <id_col>, CONCAT("<", <pwd_col>, ">") AS pwd FROM <table_name>;
-```
 
 ## Constraints (Assignment Requirements)
 
@@ -123,3 +88,4 @@ SELECT <id_col>, CONCAT("<", <pwd_col>, ">") AS pwd FROM <table_name>;
 - ✅ No libcurl usage
 - ✅ No shell commands (system/execve)
 - ✅ Compiles with strict warning flags
+
