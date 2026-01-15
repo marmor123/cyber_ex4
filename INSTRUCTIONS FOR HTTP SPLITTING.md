@@ -2,7 +2,7 @@
 
 ## Files
 
-- `http_response_splitting.c` - Main attack code
+- `ex4_splitting.c` - Main attack code
 
 ## Quick Start
 
@@ -33,7 +33,7 @@ docker restart p-ws-ver2
 ```bash
 docker exec -it attacker /bin/bash
 cd /tmp/attacker
-gcc -Wall -Wextra -Werror -Wconversion http_response_splitting.c -o attacker_http_response_splitting
+gcc -Wall -Wextra -Werror -Wconversion ex4_splitting.c -o attacker_http_response_splitting
 ```
 
 ### 4. Run the Attack
@@ -76,3 +76,4 @@ docker exec -it p-ws-ver2 cat /usr/local/apache2/logs/error_log
 # Web server logs  
 docker exec -it apache2-web-ver2 cat /usr/local/apache2/logs/error_log
 ```
+
