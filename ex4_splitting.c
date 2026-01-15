@@ -5,7 +5,7 @@
  * This program performs an HTTP Response Splitting attack to poison
  * the proxy server cache for the /67607.html page.
  *
- * Compile: gcc -Wall -Wextra -Werror -Wconversion http_response_splitting.c -o
+ * Compile: gcc -Wall -Wextra -Werror -Wconversion ex4_splitting.c -o
  * attacker_http_response_splitting Run: ./attacker_http_response_splitting
  */
 
@@ -206,3 +206,4 @@ int main(void) {
 
   return 0;
 }
+
